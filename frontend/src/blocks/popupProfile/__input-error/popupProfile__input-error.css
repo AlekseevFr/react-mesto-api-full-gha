@@ -1,0 +1,13 @@
+.popupProfile__input-error {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-self: flex-start;
+  margin-top: 5px;
+  color: red;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}

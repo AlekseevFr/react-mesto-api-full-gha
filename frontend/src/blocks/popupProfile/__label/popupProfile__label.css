@@ -1,0 +1,6 @@
+.popupProfile__label {
+  width: calc(100% - 72px);
+  margin: 0 auto;
+  border: 0px;
+
+}

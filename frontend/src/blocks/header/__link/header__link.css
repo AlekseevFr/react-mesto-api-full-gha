@@ -1,0 +1,17 @@
+.header__link {
+  max-width: 53px;
+  min-height: 22px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: white;
+  text-decoration: none;
+  margin: 0;
+  margin-left: calc(100% - 400px);
+ 
+}
+.header__link a {
+  text-decoration: none;
+  color:white;
+}

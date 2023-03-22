@@ -1,0 +1,29 @@
+.popupProfile__button {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  width: calc(100% - 72px);
+  min-height: 50px;
+  color: #FFFFFF;
+  border-radius: 2px;
+  background-color: #000000;
+  margin-top: 45px;
+  border: 0;
+}
+
+.popupProfile__button:hover {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 1s;
+}
+
+@media screen and (max-width: 768px) {
+  .popupProfile__button {
+    font-size: 14px;
+    line-height: 17px;
+    width: calc(100% - 44px);
+    margin: 0 auto;
+    margin-top: 45px;
+  }
+}

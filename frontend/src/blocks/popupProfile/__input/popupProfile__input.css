@@ -1,0 +1,20 @@
+.popupProfile__input {
+  width: 100%;
+  margin: 0 auto;
+  border: 0px;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+  margin-top: 37px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  padding-bottom: 13px;
+}
+
+@media screen and (max-width: 768px) {
+  .popupProfile__input {
+    width: 100%;
+    margin-top: 35px;
+    margin-bottom: -7px;
+  }
+}

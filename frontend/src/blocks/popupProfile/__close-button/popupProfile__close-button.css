@@ -1,0 +1,47 @@
+.popupProfile__close-button {
+  position: absolute;
+  background-color: transparent;
+  border: 0;
+  top: -42px;
+  left: 100%;
+}
+
+.popupProfile__close-button:hover {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 1s;
+}
+
+@media screen and (max-width: 1279px) {
+  .popupProfile__close-button {
+    top: -55px;
+    left: 95%;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .popupProfile__close-button {
+    top: -55px;
+  }
+}
+
+@media screen and (max-width: 842px) {
+  .popupProfile__close-button {
+    top: -50px;
+    left: 95%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .popupProfile__close-button {
+    top: -43px;
+    left: 95%;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .popup__close-button {
+    top: -38px;
+    left: 91%;
+  }
+}

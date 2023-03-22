@@ -1,0 +1,7 @@
+.profile__avatar-edit {
+  visibility: hidden;
+  position: absolute;
+}
+.profile__edit-avatar:hover .profile__avatar-edit {
+  visibility: visible;
+}

@@ -1,0 +1,10 @@
+.auth__submit-button {
+  max-width: 350px;
+  min-height: 50px;
+  margin-top: 186px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: black;
+}

@@ -1,0 +1,24 @@
+.profile__info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 30px;
+  max-width: 420px;
+  min-height: 73px;
+  word-wrap: break-word;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .profile__info {
+    margin-left: 5px;
+    align-items: flex-end;
+    justify-content: center;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-bottom: 30px;
+    max-width: 350px;
+  }
+}
