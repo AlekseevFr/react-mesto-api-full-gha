@@ -42,7 +42,7 @@ class UserApi {
 
 
 const userapi = new UserApi({
-  baseUrl: 'https://auth.nomoreparties.co',
+  baseUrl: 'http://localhost:3000',
   headers: {
     'Content-Type': 'application/json'
   }
