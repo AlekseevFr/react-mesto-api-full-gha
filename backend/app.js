@@ -2,8 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
+const cors = require('cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { handleError } = require('./middlewares/handleError');
+
 const router = require('./routes');
 
 const app = express();
@@ -20,6 +22,7 @@ app.listen(PORT, () => {
 });
 app.use(bodyParser.json());
 app.use(requestLogger);
+app.use(cors());
 app.use(router);
 app.use(errorLogger);
 app.use(errors());
