@@ -16,7 +16,8 @@ const App = () => {
 function checkToken(token) {
   userapi.checkToken(token)
   .then((res) => {
-    setEmail(res.data.email);
+    console.log(res, res.data);
+    setEmail(res.email);
     setIsLoggedIn(true);
   }).catch(console.error);
 }
