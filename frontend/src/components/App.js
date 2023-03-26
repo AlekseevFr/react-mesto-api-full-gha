@@ -70,4 +70,4 @@ function checkToken(token) {
     </Switch>
   </BrowserRouter>)
 }
-export default App;
+export default App; 
