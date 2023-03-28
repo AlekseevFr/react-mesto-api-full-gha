@@ -42,7 +42,7 @@ class UserApi {
 
 
 const userapi = new UserApi({
-  baseUrl: 'http://localhost:3001',
+  baseUrl: 'https://alekseevfr.students.nomoredomains.work',
   headers: {
     'Content-Type': 'application/json'
   }

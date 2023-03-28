@@ -1,7 +1,7 @@
 const allowedCors = ['https://alekseevfr.students.nomoredomains.work', 'http://alekseevfr.students.nomoredomains.work', 'localhost:3000'];
 function handleCross(req, res, next) {
   const { origin } = req.headers;
-  console.log(origin);
+  console.log(req.headers);
   if (allowedCors.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Origin', '*');

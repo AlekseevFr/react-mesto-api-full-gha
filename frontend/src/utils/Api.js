@@ -88,9 +88,8 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://nomoreparties.co/v1/cohort-46/',
+  baseUrl: 'https://alekseevfr.students.nomoredomains.work',
   headers: {
-    authorization: '7f1373aa-a57c-413b-aaed-e9030b16b59d',
     'Content-Type': 'application/json'
   }
 });
