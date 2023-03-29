@@ -1,11 +1,9 @@
 const allowedCors = ['http://alekseevfr.students.nomoredomains.work', 'http://api.alekseevfr.students.nomoredomains.work', 'https://alekseevfr.students.nomoredomains.work', 'https://api.alekseevfr.students.nomoredomains.work', 'http://localhost:3000'];
 function handleCross(req, res, next) {
   const { origin } = req.headers;
-  console.log(req.headers);
   if (allowedCors.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
-    res.header('Access-Control-Allow-Origin', '*');
-    console.log('GGG');
+    res.header('Access-Control-Allow-Credentials', true);
   }
   const { method } = req;
   const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
@@ -13,6 +11,7 @@ function handleCross(req, res, next) {
   if (method === 'OPTIONS') {
     res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
     res.header('Access-Control-Allow-Headers', requestHeaders);
+    res.end();
   }
   next();
 }
