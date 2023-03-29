@@ -1,4 +1,4 @@
-const allowedCors = ['http://alekseevfr.students.nomoredomains.work', 'http://api.alekseevfr.students.nomoredomains.work', 'localhost:3000'];
+const allowedCors = ['http://alekseevfr.students.nomoredomains.work', 'http://api.alekseevfr.students.nomoredomains.work', 'https://alekseevfr.students.nomoredomains.work', 'https://api.alekseevfr.students.nomoredomains.work', 'http://localhost:3000'];
 function handleCross(req, res, next) {
   const { origin } = req.headers;
   console.log(req.headers);
