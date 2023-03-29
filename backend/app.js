@@ -22,9 +22,9 @@ app.listen(PORT, () => {
   console.log(BASE_PATH);
 });
 app.use(bodyParser.json());
+app.use(cors());
 app.use(handleCross);
 app.use(requestLogger);
-app.use(cors());
 app.use(router);
 app.use(handleError);
 app.use(errorLogger);
