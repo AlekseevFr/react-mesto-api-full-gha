@@ -6,19 +6,25 @@ class Api {
   getUserInfo() {
     return fetch(`${
       this.baseUrl
-    }/users/me`, {headers: this.headers}).then(this._responseTransform)
+    }/users/me`, {headers: {
+      ...this.headers, authorization: `Bearer ${localStorage.getItem('token')}`
+      }}).then(this._responseTransform)
   }
   getInitialCards() {
     return fetch(`${
       this.baseUrl
-    }/cards`, {headers: this.headers}).then(this._responseTransform)
+    }/cards`, {headers: {
+      ...this.headers, authorization: `Bearer ${localStorage.getItem('token')}`
+      }}).then(this._responseTransform)
   }
   editUser(item) {
     return fetch(`${
       this.baseUrl
     }/users/me`, {
       method: 'PATCH',
-      headers: this.headers,
+      headers:{
+        ...this.headers, authorization: `Bearer ${localStorage.getItem('token')}`
+        },
       body: JSON.stringify(
         {name: item.name, about: item.about}
       )
@@ -29,7 +35,9 @@ class Api {
       this.baseUrl
     }/cards`, {
       method: 'POST',
-      headers: this.headers,
+      headers: {
+        ...this.headers, authorization: `Bearer ${localStorage.getItem('token')}`
+        },
       body: JSON.stringify(
         {name: el.name, link: el.link}
       )
@@ -40,7 +48,9 @@ class Api {
       this.baseUrl
     }/cards/${id}`, {
       method: 'DELETE',
-      headers: this.headers
+      headers: {
+        ...this.headers, authorization: `Bearer ${localStorage.getItem('token')}`
+        },
     }).then(this._responseTransform)
   }
   likeCard(id) {
@@ -48,7 +58,9 @@ class Api {
       this.baseUrl
     }/cards/likes/${id}`, {
       method: 'PUT',
-      headers: this.headers
+      headers: {
+        ...this.headers, authorization: `Bearer ${localStorage.getItem('token')}`
+        },
     }).then(this._responseTransform)
   }
 
@@ -57,7 +69,9 @@ class Api {
       this.baseUrl
     }/cards/likes/${id}`, {
       method: 'DELETE',
-      headers: this.headers
+      headers: {
+        ...this.headers, authorization: `Bearer ${localStorage.getItem('token')}`
+        },
     }).then(this._responseTransform)
   }
   changeLikeCardStatus(id, isLiked) {
@@ -73,7 +87,9 @@ class Api {
       this.baseUrl
     }/users/me/avatar`, {
       method: 'PATCH',
-      headers: this.headers,
+      headers: {
+        ...this.headers, authorization: `Bearer ${localStorage.getItem('token')}`
+        },
       body: JSON.stringify({avatar})
     }).then(this._responseTransform)
   }
