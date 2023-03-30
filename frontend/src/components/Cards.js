@@ -24,6 +24,7 @@ function Cards({email, onLeave}) {
   React.useEffect(() => {
     api.getInitialCards().then(res => {
       setCards(res);
+      console.log(res);
     }).catch(console.error);
   }, []);
   function handleEditAvatarClick() {
