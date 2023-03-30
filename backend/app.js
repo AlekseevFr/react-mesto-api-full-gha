@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
-const cors = require('cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { handleError } = require('./middlewares/handleError');
 const { handleCross } = require('./middlewares/cross');
@@ -23,7 +22,6 @@ app.listen(PORT, () => {
 });
 app.use(bodyParser.json());
 app.use(handleCross);
-app.use(cors());
 app.use(requestLogger);
 app.use(router);
 app.use(handleError);
