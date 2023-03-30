@@ -23,7 +23,7 @@ function Cards({email, onLeave}) {
   }, [])
   React.useEffect(() => {
     api.getInitialCards().then(res => {
-      setCards(res);
+      setCards(res.data);
       console.log(res);
     }).catch(console.error);
   }, []);
