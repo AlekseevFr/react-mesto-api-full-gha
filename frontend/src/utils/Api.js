@@ -6,17 +6,17 @@ class Api {
   getUserInfo() {
     return fetch(`${
       this.baseUrl
-    }users/me`, {headers: this.headers}).then(this._responseTransform)
+    }/users/me`, {headers: this.headers}).then(this._responseTransform)
   }
   getInitialCards() {
     return fetch(`${
       this.baseUrl
-    }cards`, {headers: this.headers}).then(this._responseTransform)
+    }/cards`, {headers: this.headers}).then(this._responseTransform)
   }
   editUser(item) {
     return fetch(`${
       this.baseUrl
-    }users/me`, {
+    }/users/me`, {
       method: 'PATCH',
       headers: this.headers,
       body: JSON.stringify(
@@ -27,7 +27,7 @@ class Api {
   createNewCard(el) {
     return fetch(`${
       this.baseUrl
-    }cards`, {
+    }/cards`, {
       method: 'POST',
       headers: this.headers,
       body: JSON.stringify(
@@ -38,7 +38,7 @@ class Api {
   deleteCard(id) {
     return fetch(`${
       this.baseUrl
-    }cards/${id}`, {
+    }/cards/${id}`, {
       method: 'DELETE',
       headers: this.headers
     }).then(this._responseTransform)
@@ -46,7 +46,7 @@ class Api {
   likeCard(id) {
     return fetch(`${
       this.baseUrl
-    }cards/likes/${id}`, {
+    }/cards/likes/${id}`, {
       method: 'PUT',
       headers: this.headers
     }).then(this._responseTransform)
@@ -55,7 +55,7 @@ class Api {
   unlikeCard(id) {
     return fetch(`${
       this.baseUrl
-    }cards/likes/${id}`, {
+    }/cards/likes/${id}`, {
       method: 'DELETE',
       headers: this.headers
     }).then(this._responseTransform)
@@ -71,7 +71,7 @@ class Api {
   changeAvatar(avatar) {
     return fetch(`${
       this.baseUrl
-    }users/me/avatar`, {
+    }/users/me/avatar`, {
       method: 'PATCH',
       headers: this.headers,
       body: JSON.stringify({avatar})

@@ -5,7 +5,6 @@ const { errors } = require('celebrate');
 const cors = require('cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { handleError } = require('./middlewares/handleError');
-// const { handleCross } = require('./middlewares/cross');
 
 const router = require('./routes');
 
@@ -20,7 +19,6 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 app.use(cors());
 
 app.use(bodyParser.json());
-// app.use(handleCross);
 app.use(requestLogger);
 app.use(router);
 app.use(handleError);
