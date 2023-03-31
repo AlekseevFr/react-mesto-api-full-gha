@@ -5,8 +5,8 @@ import basket from '../images/basket.svg';
 function Card({card, onCardClick, onCardLike, onCardDelete}) {
   const currentUser = React.useContext(CurrentUserContext);
   const isOwn = card.owner._id === currentUser._id;
-  console.log(Card);
-  console.log(currentUser._id);
+  console.log(card);
+  console.log(currentUser);
   const isLiked = card.likes.some(i => i._id === currentUser._id);
   const cardLikeButtonClassName = 'element__button_active';
 
