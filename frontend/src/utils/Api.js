@@ -56,7 +56,7 @@ class Api {
   likeCard(id) {
     return fetch(`${
       this.baseUrl
-    }/cards/likes/${id}`, {
+    }/cards/${id}/likes`, {
       method: 'PUT',
       headers: {
         ...this.headers, authorization: `Bearer ${localStorage.getItem('token')}`
@@ -67,7 +67,7 @@ class Api {
   unlikeCard(id) {
     return fetch(`${
       this.baseUrl
-    }/cards/likes/${id}`, {
+    }/cards/${id}/likes`, {
       method: 'DELETE',
       headers: {
         ...this.headers, authorization: `Bearer ${localStorage.getItem('token')}`
