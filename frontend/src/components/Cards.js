@@ -59,7 +59,9 @@ function Cards({email, onLeave}) {
   function handleCardLike(card) {
     const isLiked = card.likes.some(i => i._id === currentUser._id);
     api.changeLikeCardStatus(card._id, isLiked).then((newCard) => {
-      setCards((state) => state.map((c) => c._id === card._id ? newCard.data : c));
+      setCards((state) => {
+        console.log('check', state, card, newCard)
+        return state.map((c) => c._id === card._id ? newCard.data : c)});
     }).catch(console.error);
   }
   function handleCardDelete(card) {
