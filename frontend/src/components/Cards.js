@@ -73,7 +73,12 @@ function Cards({email, onLeave}) {
   function handleAddPlace(newPlace) {
     api.createNewCard(newPlace).then(newCard => {
       setCards((state) => [
-        newCard,
+        {
+          ...newCard,
+          owner: {
+            _id: newCard.owner,
+          }
+        },
         ...state
       ]);
       closeAllPopups();
