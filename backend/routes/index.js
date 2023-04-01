@@ -9,6 +9,11 @@ const { login, createUser } = require('../controllers/users');
 
 router.all('*', express.json());
 
+router.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 router.post(
   '/signup',
   celebrate({
