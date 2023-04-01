@@ -7,6 +7,7 @@ const { Forbidden } = require('../errors/Forbidden');
 
 const getCards = (req, res, next) => {
   Card.find({})
+    .populate('owner')
     .then((cards) => res.status(constants.HTTP_STATUS_OK).send({ data: cards }))
     .catch(next);
 };
