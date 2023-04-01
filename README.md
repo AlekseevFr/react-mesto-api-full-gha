@@ -6,7 +6,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.13.142
+IP 51.250.13.142
 
 Frontend https://alekseevfr.students.nomoredomains.work/
 
