@@ -8,7 +8,7 @@ const { Forbidden } = require('../errors/Forbidden');
 const getCards = (req, res, next) => {
   Card.find({}).sort({ createdAt: -1 })
     .populate('owner')
-    .then((cards) => res.status(constants.HTTP_STATUS_OK).send({ data: cards }))
+    .then((cards) => res.status(constants.HTTP_STATUS_OK).send({ data: cards.reverse() }))
     .catch(next);
 };
 
