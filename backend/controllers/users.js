@@ -51,6 +51,7 @@ const createUser = (req, res, next) => {
       if (err.code === 11000) {
         const conflictError = new Conflict('Пользователь уже зарегестрирован');
         next(conflictError);
+        return;
       }
       if (err.name === 'ValidationError') {
         next(new BadRequest('Некорректные данные карточки'));

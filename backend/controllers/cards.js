@@ -6,7 +6,7 @@ const { NotFound } = require('../errors/NotFound');
 const { Forbidden } = require('../errors/Forbidden');
 
 const getCards = (req, res, next) => {
-  Card.find({})
+  Card.find({}).sort({ createdAt: -1 })
     .populate('owner')
     .then((cards) => res.status(constants.HTTP_STATUS_OK).send({ data: cards }))
     .catch(next);
@@ -76,7 +76,7 @@ const dislikeCard = (req, res, next) => {
 
     .catch((err) => {
       if (err.name === 'CastError') {
-        next(new BadRequest('Некорректные данные карточки'));
+        return next(new BadRequest('Некорректные данные карточки'));
       }
       return next(err);
     });
