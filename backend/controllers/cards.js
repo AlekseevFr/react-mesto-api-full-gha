@@ -6,8 +6,7 @@ const { NotFound } = require('../errors/NotFound');
 const { Forbidden } = require('../errors/Forbidden');
 
 const getCards = (req, res, next) => {
-  Card.find({}).sort({ createdAt: -1 })
-    .populate('owner')
+  Card.find({}).populate('owner').sort({ createdAt: -1 })
     .then((cards) => res.status(constants.HTTP_STATUS_OK).send({ data: cards }))
     .catch(next);
 };
