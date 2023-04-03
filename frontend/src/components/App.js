@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter, Route, Redirect, Link, Switch} from "react-router-dom";
+import {Route, Redirect, Link, Switch, useHistory} from "react-router-dom";
 import Cards from "./Cards";
 import Login from "./Login";
 import Register from "./Register";
@@ -7,17 +7,17 @@ import Header from "./Header";
 import userapi from "../utils/UserApi";
 import InfoTooltip from "./InfoTooltip";
 import ProtectedRoute from "./ProtectedRoute";
-import { useHistory } from "react-router-dom";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const [type, setType] = React.useState(null);
   const [email, setEmail] = React.useState("");
 
+  const history = useHistory();
+
 function checkToken(token) {
   userapi.checkToken(token)
   .then((res) => {
-    console.log(res, res.data);
     setEmail(res.email);
     setIsLoggedIn(true);
   }).catch(console.error);
@@ -33,12 +33,15 @@ function checkToken(token) {
       localStorage.setItem('token', res.token);
     }).catch(console.error);
   }
-  let history = useHistory();
 
 
   function handleRegister(data) {
-    userapi.register(data).then(() => {setType('success'); history.push("/sign-in")}).catch(()=>setType('error'));
+    userapi.register(data).then(() => {
+      setType('success');
+      history.push("/sign-in");
+    }).catch(()=> setType('error'));
   }
+
   function handleClose() {
  setType(null);
   }
@@ -48,7 +51,7 @@ function checkToken(token) {
     setIsLoggedIn(false);
   }
 
-  return (<BrowserRouter>
+  return (<>
     <Redirect to={
       isLoggedIn ? '/' : '/sign-in'
     }/>
@@ -72,6 +75,6 @@ function checkToken(token) {
       <InfoTooltip type={type} onClose={handleClose}/>
     </Route>
     </Switch>
-  </BrowserRouter>)
+  </>)
 }
-export default App; 
+export default App;
