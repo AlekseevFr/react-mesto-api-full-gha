@@ -23,8 +23,7 @@ function Cards({email, onLeave}) {
   }, [])
   React.useEffect(() => {
     api.getInitialCards().then(res => {
-      setCards(res.data);
-      console.log(res);
+      setCards(res.data.reverse());
     }).catch(console.error);
   }, []);
   function handleEditAvatarClick() {
