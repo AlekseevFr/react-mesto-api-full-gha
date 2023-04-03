@@ -7,6 +7,7 @@ import Header from "./Header";
 import userapi from "../utils/UserApi";
 import InfoTooltip from "./InfoTooltip";
 import ProtectedRoute from "./ProtectedRoute";
+import { useHistory } from "react-router-dom";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
@@ -32,8 +33,11 @@ function checkToken(token) {
       localStorage.setItem('token', res.token);
     }).catch(console.error);
   }
+  let history = useHistory();
+
+
   function handleRegister(data) {
-    userapi.register(data).then(() => {setType('success')}).catch(()=>setType('error'));
+    userapi.register(data).then(() => {history.push("/sign-in"); setType('success')}).catch(()=>setType('error'));
   }
   function handleClose() {
  setType(null);
