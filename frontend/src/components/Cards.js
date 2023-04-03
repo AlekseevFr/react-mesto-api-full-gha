@@ -54,6 +54,7 @@ function Cards({email, onLeave}) {
   function handleUpdateAvatar({avatar}) {
     api.changeAvatar(avatar).then(newInfo => {
       setCurrentUser(newInfo);
+      closeAllPopups();
     }).catch(console.error);
   }
   function handleCardLike(card) {
