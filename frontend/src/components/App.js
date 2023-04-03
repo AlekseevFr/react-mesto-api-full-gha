@@ -38,7 +38,7 @@ function checkToken(token) {
   function handleRegister(data) {
     userapi.register(data).then(() => {
       setType('success');
-      history.push("/sign-in");
+      setTimeout(() => history.push("/sign-in"), 2000);
     }).catch(()=> setType('error'));
   }
 
